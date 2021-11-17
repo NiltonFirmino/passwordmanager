@@ -1,6 +1,8 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'home/presenter/ui_home.dart';
+
+import 'auth/presenter/ui_register.dart';
 import 'onboarding/presenter/ui_onboarding.dart';
+import 'splash/presenter/ui_splash.dart';
 
 class AppModule extends Module {
   @override
@@ -8,7 +10,8 @@ class AppModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-    ChildRoute('/', child: (context, args) => HomePage()),
-    ChildRoute('/second', child: (context, args) => SecondPage()),
+    ChildRoute('/', child: (context, args) => const SplashPage()),
+    ChildRoute('/onboard', child: (context, args) => OnBoarding()),
+    ChildRoute('/second', child: (context, args) => RegisterPage()),
   ];
 }
